@@ -66,10 +66,10 @@ INSERT INTO Products (CategoryID, ProductName, Price, StockQuantity) VALUES
 
 -- Додаємо замовлення
 INSERT INTO Orders (CustomerID, OrderDate, Status) VALUES
-(1, '2023-10-01 10:30:00', 'Доставлено'),
-(2, '2023-10-02 14:15:00', 'В обробці'),
-(1, '2023-10-05 09:00:00', 'Нове'),
-(3, '2023-10-06 18:45:00', 'Відправлено');
+(1, '2025-10-01 10:30:00', 'Доставлено'),
+(2, '2025-10-02 14:15:00', 'В обробці'),
+(1, '2025-10-05 09:00:00', 'Нове'),
+(3, '2025-10-06 18:45:00', 'Відправлено');
 
 -- Додаємо деталі замовлень (вміст чеків)
 INSERT INTO OrderDetails (OrderID, ProductID, Quantity, UnitPrice) VALUES
@@ -78,4 +78,5 @@ INSERT INTO OrderDetails (OrderID, ProductID, Quantity, UnitPrice) VALUES
 (2, 3, 1, 55000.00), -- Марія купила MacBook
 (3, 5, 3, 500.00),   -- Олександр купив 3 чохли пізніше
 (4, 2, 1, 40000.00); -- Андрій купив Samsung
+
 
