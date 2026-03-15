@@ -16,10 +16,10 @@
 
 **Результат роботи фільтрації (HAVING):**
 
-![image](images/image1)
-![image](images/image2)
-![image](images/image3)
-![image](images/image4)
+![image](images/image1.png)
+![image](images/image2.png)
+![image](images/image3.png)
+![image](images/image4.png)
 
 ---
 
@@ -33,9 +33,9 @@
 
 **Результат об'єднання трьох таблиць:**
 
-![image](images/image5)
-![image](images/image6)
-![image](images/image7)
+![image](images/image5.png)
+![image](images/image6.png)
+![image](images/image7.png)
 
 ---
 
@@ -49,7 +49,7 @@
 
 **Результат підзапиту в SELECT (підрахунок книг):**
 
-![image](images/image8)
-![image](images/image9)
-![image](images/image10)
+![image](images/image8.png)
+![image](images/image9.png)
+![image](images/image10.png)
 
