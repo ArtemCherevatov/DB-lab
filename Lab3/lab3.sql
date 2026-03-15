@@ -1,5 +1,3 @@
-
-
 -- 1. Використання SELECT 
 -- Вибір лише певних стовпців 
 SELECT FirstName, LastName, Email 
@@ -14,9 +12,8 @@ WHERE Price > 20000;
 SELECT * FROM Orders 
 WHERE Status = 'Нове';
 
-
-
 -- 2. Використання INSERT
+
 -- Додаємо нового клієнта в базу
 INSERT INTO Customers (FirstName, LastName, Email, Phone) 
 VALUES ('Іван', 'Франко', 'ivan.franko@example.com', '+380991112233');
@@ -24,8 +21,6 @@ VALUES ('Іван', 'Франко', 'ivan.franko@example.com', '+380991112233');
 -- Додаємо новий товар
 INSERT INTO Products (CategoryID, ProductName, Price, StockQuantity) 
 VALUES (3, 'Навушники Bluetooth', 2500.00, 30);
-
-
 
 -- 3. Використання UPDATE
 
@@ -39,7 +34,7 @@ UPDATE Products
 SET Price = 38000.00, StockQuantity = 12 
 WHERE ProductName = 'Samsung Galaxy S24';
 
--- 4. Використання DELETE (Безпечне видалення даних)
+-- 4. Використання DELETE
 
 -- Спочатку створимо тестового клієнта
 INSERT INTO Customers (FirstName, LastName, Email) 
