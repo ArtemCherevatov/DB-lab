@@ -20,7 +20,7 @@
 4. **SELECT:** Виконано вибірку даних для перевірки результатів змін.
 
 ### Результати виконання 
-![image] (images/image1.png)
-![image] (images/image2.png)
-![image] (images/image3.png)
-![image] (images/image4.png)
+![image](images/image1.png)
+![image](images/image2.png)
+![image](images/image3.png)
+![image](images/image4.png)
