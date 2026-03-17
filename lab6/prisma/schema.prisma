@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model categories {
+  categoryid   Int        @id @default(autoincrement())
+  categoryname String     @unique @db.VarChar(100)
+  products     products[]
+}
+
+model customers {
+  customerid Int      @id @default(autoincrement())
+  firstname  String   @db.VarChar(50)
+  lastname   String   @db.VarChar(50)
+  email      String   @unique @db.VarChar(100)
+  orders     orders[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model orderdetails {
+  orderdetailid Int       @id @default(autoincrement())
+  orderid       Int?
+  productid     Int?
+  quantity      Int
+  unitprice     Decimal   @db.Decimal(10, 2)
+  orders        orders?   @relation(fields: [orderid], references: [orderid], onDelete: Cascade, onUpdate: NoAction)
+  products      products? @relation(fields: [productid], references: [productid], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model orders {
+  orderid      Int            @id @default(autoincrement())
+  customerid   Int?
+  orderdate    DateTime?      @default(now()) @db.Timestamp(6)
+  status       String         @default("Нове") @db.VarChar(50)
+  orderdetails orderdetails[]
+  customers    customers?     @relation(fields: [customerid], references: [customerid], onDelete: NoAction, onUpdate: NoAction)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model products {
+  productid     Int            @id @default(autoincrement())
+  categoryid    Int?
+  productname   String         @db.VarChar(255)
+  price         Decimal        @db.Decimal(10, 2)
+  stockquantity Int            @default(0)
+  orderdetails  orderdetails[]
+  categories    categories?    @relation(fields: [categoryid], references: [categoryid], onDelete: NoAction, onUpdate: NoAction)
+  isAvailable   Boolean        @default(true)
+  reviews       Review[]
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  rating    Int
+  comment   String?
+  productid Int
+  products  products @relation(fields: [productid], references: [productid])
+}
